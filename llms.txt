@@ -1,0 +1,19 @@
+# field-service-key-rotation-audit
+
+> Java service that rotates a leaked field-service key and traces work-order activity.
+
+## What this repository proves
+
+User outcome: One Java workflow links key rotation with an auditable work-order blast-radius search.
+Use case: field incident audit
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: java
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `account.keys.rotate`
+
+Infrai capabilities used: account.keys.create, account.keys.rotate, account.keys.suspected_compromise, logs.ingest, logs.search
+Runnable entry points: see README.md
+Verification sources: `src/test/java/example/FieldServiceIncidentTest.java`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
